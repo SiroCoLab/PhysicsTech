@@ -1,0 +1,49 @@
+.calc-fab {
+  position: fixed; right: 16px; bottom: calc(18px + var(--safe-bottom)); z-index: 60;
+  display: flex; align-items: center; gap: 8px; border: 0; border-radius: 18px; padding: 13px;
+  background: var(--c-cyan); color: #06223a; font-weight: 800; cursor: pointer;
+  box-shadow: 0 4px 0 var(--c-cyan-edge), 0 12px 24px rgba(11, 20, 38, 0.28);
+}
+.calc-fab.raised { bottom: calc(var(--tabbar-h) + 24px + var(--safe-bottom)); }
+.calc-fab:active { transform: translateY(4px); box-shadow: 0 0 0 var(--c-cyan-edge); }
+.calc-fab .ic { width: 24px; height: 24px; }
+.calc-fab span { display: none; }
+@media (min-width: 960px) { .calc-fab.raised { bottom: 24px; } .calc-fab span { display: inline; } .calc-fab { padding: 13px 18px; } }
+
+.calc {
+  position: fixed; right: 16px; bottom: 96px; z-index: 70; width: 344px; max-width: calc(100vw - 16px);
+  max-height: calc(var(--app-height) - 120px); overflow-y: auto;
+  background: var(--c-surface); border: 2px solid var(--c-border); border-radius: 22px; padding: 12px;
+  box-shadow: 0 4px 0 var(--c-edge), 0 22px 54px rgba(11, 20, 38, 0.4);
+  user-select: none; -webkit-touch-callout: none; touch-action: manipulation; animation: rise 0.22s both;
+}
+@media (max-width: 560px) {
+  .calc { left: 0; right: 0; bottom: 0; width: auto; max-width: none; border-radius: 22px 22px 0 0; border-width: 2px 0 0;
+    padding: 12px 10px calc(12px + var(--safe-bottom)); max-height: calc(var(--app-height) - 40px - var(--safe-top)); }
+}
+.calc-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.calc-head b { flex: 1; }
+.calc-mini { border: 2px solid var(--c-border); background: var(--c-surface-2); border-radius: 10px; min-height: 36px; min-width: 40px; padding: 4px 10px; font-weight: 800; font-size: 0.8rem; cursor: pointer; }
+.calc-tabs { display: flex; gap: 5px; margin-bottom: 8px; }
+.calc-tabs button { flex: 1; border: 2px solid var(--c-border); background: var(--c-surface-2); border-radius: 11px; min-height: 38px; font-weight: 700; font-size: 0.78rem; cursor: pointer; }
+.calc-tabs button.on { background: var(--c-navy-1); color: #fff; border-color: var(--c-navy-1); }
+.cf { border: 2px solid var(--c-border); border-radius: 12px; padding: 9px 11px; min-height: 2.6rem; font-size: 1.08rem; font-weight: 600; word-break: break-all; cursor: text; display: flex; gap: 6px; align-items: baseline; }
+.cf i { font-style: normal; color: var(--c-muted); font-size: 0.8rem; min-width: 1.2rem; }
+.cf.on { border-color: var(--c-primary); }
+.cf.on span::after { content: ''; display: inline-block; width: 2px; height: 1.05em; background: var(--c-primary); margin-left: 1px; vertical-align: text-bottom; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.cfr { display: flex; gap: 6px; margin-top: 6px; }
+.cfr .cf { flex: 1; min-width: 0; min-height: 0; padding: 6px 8px; font-size: 0.95rem; }
+.calc-prev { min-height: 1.4rem; color: var(--c-muted); margin: 6px 2px 0; overflow-x: auto; white-space: nowrap; }
+.calc-res { text-align: right; font-size: 1.5rem; font-weight: 800; margin: 6px 2px 2px; color: var(--c-primary); min-height: 2.1rem; overflow-x: auto; }
+.calc-res.err { color: var(--c-bad); font-size: 0.95rem; font-weight: 700; text-align: left; }
+.calc-note { font-size: 0.8rem; font-weight: 500; color: var(--c-muted); margin-top: 4px; }
+.calc-hist { display: flex; flex-direction: column; align-items: flex-start; max-height: 70px; overflow: auto; margin-bottom: 6px; }
+.calc-hist button { border: 0; background: none; color: var(--c-muted); font-size: 0.78rem; padding: 2px; cursor: pointer; text-align: left; }
+.calc-keys { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.calc-keys button { border: 2px solid var(--c-border); background: var(--c-surface-2); border-radius: 12px; min-height: 44px; font-weight: 700; font-size: 0.95rem; cursor: pointer; box-shadow: 0 2px 0 var(--c-edge); }
+.calc-keys button:active { transform: translateY(2px); box-shadow: none; }
+.calc-keys .n { background: var(--c-surface); font-size: 1.05rem; }
+.calc-keys .o { background: var(--c-primary-soft); border-color: transparent; }
+.calc-keys .eq { background: var(--c-primary); color: #fff; border-color: var(--c-primary); box-shadow: 0 2px 0 var(--c-primary-edge); }
+.calc-keys .w2 { grid-column: span 2; }

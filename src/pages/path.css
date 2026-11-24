@@ -1,0 +1,28 @@
+.psection { margin: 18px 0 8px; }
+.psection-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.psection-head h2 { margin: 0; }
+.ptrack { list-style: none; margin: 0; padding: 0; position: relative; }
+.ptrack::before { content: ''; position: absolute; left: 39px; top: 20px; bottom: 20px; width: 4px; border-radius: 4px; background: var(--c-border); }
+.pnode { position: relative; margin: 0 0 12px; }
+.pnode-link {
+  display: flex; gap: 14px; align-items: center; text-decoration: none; color: inherit;
+  background: var(--c-surface); border: 2px solid var(--c-border); border-radius: 20px; padding: 12px 14px;
+  box-shadow: 0 3px 0 var(--c-edge); transition: transform 0.08s, box-shadow 0.08s;
+}
+.pnode-link:active { transform: translateY(3px); box-shadow: none; }
+.pnode-ic { position: relative; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; color: #fff; flex: none; background: var(--c-primary); box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.2), 0 0 0 4px var(--c-surface); }
+.pnode-ic .ic { width: 24px; height: 24px; }
+.pnode-ic em { position: absolute; right: -4px; bottom: -4px; width: 22px; height: 22px; border-radius: 50%; background: var(--c-surface); color: var(--c-text); border: 2px solid var(--c-border); font-size: 0.68rem; font-style: normal; font-weight: 800; display: grid; place-items: center; }
+.pnode-body { flex: 1; min-width: 0; display: grid; gap: 4px; }
+.pnode-body b { line-height: 1.25; }
+.pnode-body .ic { vertical-align: -2px; }
+.st-done .pnode-ic { background: var(--c-ok); }
+.st-progress .pnode-ic { background: var(--c-warn); }
+.st-available .pnode-ic { background: var(--c-primary); animation: pulse 2.4s ease-in-out infinite; }
+.st-locked .pnode-ic { background: var(--c-muted-strong); }
+.st-locked .pnode-link { background: var(--c-surface-2); }
+@keyframes pulse { 0%, 100% { box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.2), 0 0 0 4px var(--c-surface); } 50% { box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.2), 0 0 0 4px var(--c-surface), 0 0 0 9px rgba(52, 120, 246, 0.25); } }
+@media (min-width: 720px) {
+  .ptrack::before { left: 50%; transform: translateX(-2px); }
+  .pnode { width: 70%; margin-left: calc(15% + var(--off)); }
+}

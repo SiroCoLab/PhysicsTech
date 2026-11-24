@@ -1,0 +1,63 @@
+/* Design tokens. Light theme is the default; dark is applied with [data-theme="dark"]. */
+:root {
+  --c-navy-0: #0b1426;
+  --c-navy-1: #101d35;
+  --c-navy-2: #172944;
+  --c-primary: #3478f6;
+  --c-primary-edge: #1f58c9;
+  --c-primary-soft: #e3eeff;
+  --c-cyan: #22b8e0;
+  --c-cyan-edge: #1592b5;
+  --c-ok: #16a34a;
+  --c-ok-edge: #0f7a37;
+  --c-ok-soft: #e4f8ec;
+  --c-bad: #e5484d;
+  --c-bad-edge: #b8343a;
+  --c-bad-soft: #fdecec;
+  --c-warn: #d48806;
+  --c-warn-soft: #fff4d6;
+  --c-streak: #ff8a1f;
+  --c-xp: #7c5cff;
+  --c-gold: #f5b70a;
+
+  --c-bg: #f4f7fc;
+  --c-surface: #ffffff;
+  --c-surface-2: #eef3fb;
+  --c-text: #1f2f45;
+  --c-muted: #6b7a90;
+  --c-muted-strong: #8a95a8;
+  --c-border: #dfe7f2;
+  --c-edge: #cad6e6;
+
+  --radius-s: 12px;
+  --radius-m: 16px;
+  --radius-l: 22px;
+  --shadow: 0 2px 0 var(--c-edge), 0 10px 24px rgba(16, 29, 53, 0.06);
+  --font: 'Manrope', 'Inter', 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-math: 'Cambria Math', 'STIX Two Math', Cambria, Georgia, serif;
+
+  /* future Telegram Mini App: the platform layer may set these from the Telegram viewport */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --app-height: 100dvh;
+  --tabbar-h: 64px;
+  --content-max: 820px;
+}
+
+:root[data-theme='dark'] {
+  --c-primary: #4b8bff;
+  --c-primary-edge: #2a62cc;
+  --c-primary-soft: #1b2f52;
+  --c-ok-soft: #10301f;
+  --c-bad-soft: #3a1b20;
+  --c-warn-soft: #3a2f12;
+  --c-bg: #0b1426;
+  --c-surface: #132238;
+  --c-surface-2: #1a2d4a;
+  --c-text: #e6edf7;
+  --c-muted: #9aaac0;
+  --c-muted-strong: #7d8ba0;
+  --c-border: #243651;
+  --c-edge: #081120;
+  --shadow: 0 2px 0 var(--c-edge), 0 10px 24px rgba(0, 0, 0, 0.3);
+}
